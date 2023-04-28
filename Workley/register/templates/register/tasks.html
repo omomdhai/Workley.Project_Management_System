@@ -1,0 +1,70 @@
+{% extends 'core/base.html' %}
+{% load staticfiles %}
+
+{% block breadcrumb %}
+        <li class="breadcrumb-item">Home</li>
+        <li class="breadcrumb-item">Users</li>
+        <li class="breadcrumb-item active">Tasks</li>
+{% endblock breadcrumb%}
+
+{% block content %}
+<div class="container-fluid">
+  <div id="ui-view" style="opacity: 1;"><div class="animated fadeIn">
+    <div class="row">
+    <div class="col-12">
+        <div class="row">
+            {% if user.task_set.values.count %}
+            <h3 class="lead">You have {{ user.task_set.values.count }} Task{{ user.task_set.values.count|pluralize }} : </h3>
+            <table class="table table-responsive-sm table-hover table-outline mb-5 ">
+                <thead class="thead-light">
+                <tr>
+                    <th style="text-align: center;">Assigned Person</th>
+                    <th style="text-align: center;">Project</th>
+                    <th style="text-align: center;">Task</th>
+                    <th style="text-align: center;">Start / Done</th>
+                </tr>
+            </thead>
+                    <tbody>
+                        {% for task1 in task %}
+                        <tr>
+                            <td class="text-center">
+                                <div class="avatar">
+                                    <strong>{{task1.assign}}</strong>
+                                </div>
+                            </td>
+                            <td class="text-center">
+                                <div class="avatar">
+                                    <strong>{{task1.project}}</strong>
+                                </div>
+                            </td>
+                            <td class="text-center">
+                                <div class="avatar">
+                                    <strong>{{task1.task_name}}</strong>
+                                </div>
+                            </td>
+                            <td class="text-center">
+                                <div class="avatar">
+                                    <strong>{{task1.status}}</strong>
+                         
+                                </div>
+                            </td>
+                        </tr>
+                        {% endfor %}
+                        <!-- end user -->
+                    </tbody>
+                </table>
+                {% else %}
+                {% if user.is_authenticated %}
+                    <h3 class="m-5">You have no Tasks :(</h3>
+                {% else %}
+                    <a href="{% url 'core:login' %}" class="nav-link display-4"><h1>Log in to see your Tasks...</h1></a>
+                {% endif %}
+                {% endif %}
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
