@@ -14,7 +14,7 @@
     <div class="col-12">
         <div class="row">
             {% if user.task_set.values.count %}
-            <h3 class="lead">You have {{ user.task_set.values.count }} Task{{ user.task_set.values.count|pluralize }} : </h3>
+            {% comment %} <h3 class="lead">You have {{ user.task_set.values.count }} Task{{ user.task_set.values.count|pluralize }} : </h3> {% endcomment %}
             <table class="table table-responsive-sm table-hover table-outline mb-5 ">
                 <thead class="thead-light">
                 <tr>

@@ -2,7 +2,7 @@
  * CoreUI - Open Source Bootstrap Admin Template
  * @version v1.0.10
  * @link http://coreui.io
- * Copyright (c) 2018 creativeLabs Łukasz Holeczek
+ * Copyright (c) 2018 creativeLabs Åukasz Holeczek
  * @license MIT
  */
 
@@ -12,7 +12,7 @@
  * Copyright 2011-2018 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
-:root {
+ :root {
   --blue: #20a8d8;
   --indigo: #6610f2;
   --purple: #6f42c1;
@@ -213,17 +213,13 @@ figure {
 img {
   vertical-align: middle;
   border-style: none; }
-div{
-
-  display: flex;
-  justify-content: center;
-}
 
 svg:not(:root) {
   overflow: hidden; }
 
-table { 
+table {
   border-collapse: collapse; }
+
 caption {
   padding-top: 0.75rem;
   padding-bottom: 0.75rem;
@@ -10489,7 +10485,7 @@ base-chart.chart {
   color: #fff;
   background: #29363d; }
   .sidebar .sidebar-close {
-    position: absolute;
+    position: left;
     right: 0;
     display: none;
     padding: 0 1rem;
